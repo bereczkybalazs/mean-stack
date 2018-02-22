@@ -25,7 +25,8 @@ sudo apt-get update
 
 #install base npm packages
 sudo npm install -g express
-sudo npm install nodemon -g --save
+sudo npm install nodemon -g
+sudo npm install forever -g
 
 echo ""
 echo "=========================================="

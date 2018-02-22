@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # run "bootstrap.sh" shell script when setting up our machine
   config.vm.provision :shell, :privileged => false, :path => "bootstrap.sh"
+  config.vm.provision :shell, path: "always.sh", run: 'always'
 
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -48,6 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./", "/home/vagrant", create: "true"
+  config.vm.synced_folder "./src", "/vagrant/src", create: "true"
 
 end
